@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>URL List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="table-responsive">
+      <h2>URL List</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr class="success">
+            <th>ID</th>
+            <th>URL Name</th>
+            <th>URL Short</th>
+            <th>Click Count</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% result.forEach(function(val){ %>
+          <tr class="active">
+            <td><%= val.id %></td>
+            <td><%= val.url_name %></td>
+            <td><a href="/val/<%= val.url_short %>" target="_blank"><%= config %><%= val.url_short %></a></td>
+            <td><%= val.click_count %></td>
+            <td><a href="/edit/<%= val.id %>" class="btn btn-info">Update</a>&nbsp|&nbsp<a href="/delete/<%= val.id %>" class="btn btn-warning">Delete</a></td>
+            <% }) %>
+         </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="form-submit">
+      <form id="user-form" action="/add" method="post">
+        <div class="form-group">
+          <label for="exampleInputFirstname">URL Name</label>
+          <input type="url" class="form-control" name="urlname" placeholder="urlname"/>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Update Data</title>
+</head>
+<body>
+  <table>
+    <div class="form-submit">
+      <form id="user-form" action="/update" method="post">
+        <fieldset>
+          <div class="form-group">
+            <label for="exampleInputId" >Id User</label>
+            <input type="text" class="form-control" name="id" value="<%= hasil.id%>" readonly="true" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFirstname" >Url Name</label>
+            <input type="text" class="form-control" name="urlname" value="<%= hasil.url_name%>"/>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputLirstname">Url Shorter</label>
+            <input type="text" class="form-control" name="urlshort" value="<%= hasil.url_short%>" readonly="true"/>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </fieldset>
+      </form>
+    </table>
+  </div>
+</body>
+</html>
