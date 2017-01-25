@@ -22,14 +22,11 @@ router.get('/url/:shorturl',function(req,res){
     shorturl: req.params.shorturl
   }
 }).then(function(use){
+  console.log(use);
     use.clickcount++;
     use.update({clickcount:use.clickcount, updatedAt: new Date()})
     res.redirect(use.url)
     })
-});
-
-router.get('/url/:shorturl',function(req,res){
-    res.redirect('/')
 });
 
 module.exports = router;
