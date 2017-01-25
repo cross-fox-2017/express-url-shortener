@@ -21,7 +21,8 @@ router.get('/table/:short_url', function(req, res, next) {
 
 
 router.get('/:short_url', function(req, res, next) {
-  models.Links.find({where:{short_url: req.params.short_url}}).then(function (find) {
+  let url = `${config.base_url}${req.params.short_url}`
+  models.Links.find({where:{short_url: url}}).then(function (find) {
     let x = find.count + 1
     find.update({
       count: x

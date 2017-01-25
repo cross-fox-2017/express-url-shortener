@@ -22,8 +22,8 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     hooks: {
       beforeCreate: function(link, options) {
-        link.short_url = `${random()}`
-        link.count = 1;
+        link.short_url = `${config.base_url}${random()}`
+        link.count = 0;
       }
     },
     classMethods: {

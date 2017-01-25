@@ -17,12 +17,13 @@
             <tr>
               <td><%= data[i].id %></td>
               <td><%= data[i].link %></td>
-              <td><a href="<%= `/${data[i].short_url}` %>"><%= `http://localhost:3000/${data[i].short_url}` %></a></td>
+              <td><a href="<%= url[i].short_url %>"><%= url[i].short_url %></a></td>
               <td><%= data[i].count %></td>
             </tr>
             <% } %>
           </tbody>
         </table>
+
       </div>
     </div>
 <% include ../partials/footer %>
