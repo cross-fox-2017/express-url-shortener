@@ -21,6 +21,7 @@ module.exports = function(sequelize, DataTypes) {
       beforeCreate: function (url, options) {
         url.clicked = 0,
         url.shortened = `${config.base_url}${random()}`
+        url.shortened = random()
       }
     },
     classMethods: {

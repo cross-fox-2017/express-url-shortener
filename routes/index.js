@@ -22,8 +22,7 @@ router.get('/add', function (req, res, next) {
 })
 
 router.get('/:shortened', (req, res, next) => {
-  let base_url = `${config.base_url}${req.params.shortened}`
-  models.Urls.findOne({where: {shortened: base_url }}).then(function (find) {
+  models.Urls.findOne({where: {shortened: req.params.shortened }}).then(function (find) {
     find.update({
       clicked: find.clicked + 1
     }).then(function (data) {
