@@ -1,0 +1,15 @@
+{
+  "development": {
+    "username": "hacktiv8-6",
+    "password": "hacktiv8-6",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "database": "express-url-shortener",
+    "logging": false,
+    "base_url": "http://localhost:3000/"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "base_url": "https://murmuring-escarpment-51928.herokuapp.com/"
+  }
+}

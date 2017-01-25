@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+    <div class="container">
+      <div class="row">
+        <div class="title" style="text-align: center;">
+          <h1><%= title %></h1>
+        </div>
+        <br>
+        <table class="table table-bordered">
+          <thead style="background-color: rgba(255, 230, 128, 0.8);">
+            <th>Url</th>
+            <th>Shortened Url</th>
+            <th>Clicked</th>
+            <th>Actions</th>
+          </thead>
+          <tbody>
+            <% for(let i = 0; i < url_data.length; i++){ %>
+            <tr>
+              <td><%= url_data[i].url %></td>
+              <td><a href="<%= url_data[i].shortened %>" target="_blank"><%= base_url %><%= url_data[i].shortened %></a></td>
+              <td><%= url_data[i].clicked %></td>
+              <td><a href="/delete/<%= url_data[i].url %>" class="btn btn-danger">Delete</a></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <a href="/add" class="btn btn-primary">Add</a>
+      </div>
+    </div>
+<% include ../partials/footer %>

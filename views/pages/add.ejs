@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+  <div class="container">
+    <div class="row">
+      <h2>Add URL</h2>
+      <form action="/add" method="post">
+        <div class="form-group">
+          <label for="url_">URL:</label>
+          <input type="text" class="form-control" name="url" id="url_" value="" placeholder="Your URL">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+<% include ../partials/footer %>
