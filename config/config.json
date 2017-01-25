@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "hacktiv8-7",
+    "password": "",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "database": "express_url_shortener",
+    "logging": false,
+    "base_url": "http://localhost:3000/"
+  },
+  "test": {
+    "username": "hacktiv8-7",
+    "password": "",
+    "database": "express_url_shortener",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "hacktiv8-7",
+    "password": "",
+    "database": "express_url_shortener",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

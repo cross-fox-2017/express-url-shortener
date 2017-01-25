@@ -1,0 +1,13 @@
+<% include ../partials/header %>
+  <div class="container">
+    <div class="row">
+      <h3>Shorten URL: </h3>
+      <form action="/urls" method="post">
+        <div class="form-group">
+          <input type="text" class="form-control" name="url" value="" placeholder="Paste a link to shorten it">
+        </div>
+        <button type="submit" class="btn btn-success">Shorten</button>
+      </form>
+    </div>
+  </div>
+<% include ../partials/footer %>
