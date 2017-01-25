@@ -7,5 +7,28 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <form class="" action="/urls" method="post">
+      <label>Input New URL</label>
+      <input type="text" name="link">
+      <input type="submit" value="submit">
+    </form>
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>URL</th>
+        <th>shorted URL</th>
+        <th>Click Count</th>
+      </thead>
+      <tbody>
+        <% data.forEach(function(data){ %>
+        <tr>
+          <td><%= data.id %></td>
+          <td><%= data.url %></td>
+          <td><%= data.shorturl %></td>
+          <td><%= data.clickcount %></td>
+        </tr>
+      <% }) %>
+      </tbody>
+    </table>
   </body>
 </html>
