@@ -18,7 +18,7 @@ router.post('/', function(req, res, next) {
   })
 });
 
-router.get('/tes/:shorten_url',function(req,res){
+router.get('/:shorten_url',function(req,res){
   db.Url.findOne({where:{shorten_url:req.params.shorten_url}}).then(function(use){
     var a=use.click_count+1
     use.update({click_count:a})
