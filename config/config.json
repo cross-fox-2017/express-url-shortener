@@ -1,0 +1,14 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "password",
+    "database": "url_shortener_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "base_url": "localhost:3000"
+  },
+  "production":{
+    "use_env_variable": "DATABASE_URL",
+    "base_url": "http://salty-ravine-59114.herokuapp.com"
+  }
+}
