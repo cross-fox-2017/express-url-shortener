@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+
+<h1><%=title%></h1>
+<table class="table table-striped">
+  <tr>
+    <th>url</th>
+    <th>shorten_url</th>
+    <th>click_count</th>
+  </tr>
+  <% for(var i=0;i<data.length;i++){%>
+  <tr>
+    <td><%=data[i].url%></td>
+    <td><a href="/tes/<%=data[i].shorten_url %>" target="_blank" > http://localhost:3000/<%=data[i].shorten_url%></a></td>
+    <td><%=data[i].click_count%></td>
+  </tr>
+  <% }%>
+</table>
+<% include form%>
+<% include ../partials/footer %>
