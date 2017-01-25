@@ -4,7 +4,8 @@
     "password": "1234",
     "database": "url",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "base_url": "localhost:3000/"
   },
   "test": {
     "username": "root",
@@ -15,6 +16,6 @@
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
-    "base_url": "https://thawing-fjord-21013.herokuapp.com"
+    "base_url": "https://thawing-fjord-21013.herokuapp.com/"
   }
 }

@@ -2,10 +2,12 @@ const express = require('express');
 let router = express.Router();
 const models = require('../models');
 var url = models.Url;
+var env       = process.env.NODE_ENV || 'development';
+var config    = require(__dirname + '/../config/config.json')[env];
 
 router.get('/', function(req, res) {
   url.findAll().then(function(result){
-    res.render('index', {result: result, title: "URL List"})
+    res.render('index', {result: result, title: "URL List", config:config.base_url})
   })
 });
 
