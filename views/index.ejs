@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="container">
+      <br />
+      <br />
+      <h1><%= title %></h1>
+      <br />
+      <br />
+        <div class="row">
+          <div class="col-md4">
+            <table class="table table-hover">
+              <tr>
+                <th>ID</th>
+                <th>URL</th>
+                <th>Shortened URL</th>
+                <th>Click Count</th>
+              </tr>
+              <% for(var i=0; i< url_short.length; i++){ %>
+              <tr>
+                <td><%= url_short[i].id %></td>
+                <td><%= url_short[i].url %></td>
+                <td><a href="<%= url_short[i].shortener %>"><%= url_short[i].shortener %></a></td>
+                <td><%= url_short[i].click_count %></td>
+              </tr>
+              <%}%>
+            </table>
+          </div>
+
+
+          <div class="row">
+            <form action="/" method="post">
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="title" placeholder="Add Url">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-3">
+                    <button type="submit" value="Submit" class="btn btn-success">Submit</button>
+                  </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+  </body>
+</html>
