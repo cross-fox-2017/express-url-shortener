@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>List URL</h1>
+          <table class="table table-hover">
+            <tr>
+              <th>ID</th>
+              <th>URL</th>
+              <th>Short URL</th>
+              <th>Click Count</th>
+              <th>Created At</th>
+              <th>Updated At</th>
+            </tr>
+            <% result.forEach(function(val){ %>
+            <tr>
+              <td><%= val.id %></td>
+              <td><%= val.url %></td>
+              <td><a href="/<%= val.shorturl %>" %>><%= config %><%= val.shorturl %></a></td>
+              <td><%= val.clickcount %></td>
+              <td><%= val.createdAt %></td>
+              <td><%= val.updatedAt %></td>
+            </tr>
+            <% }) %>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <h3>Add URL</h3>
+          <form class="form-horizontal" action="/create" method="post">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Input URL</label>
+              <div class="col-sm-10">
+                <input type="url" class="form-control" name="url" value="http://">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
