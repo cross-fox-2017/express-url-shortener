@@ -16,10 +16,7 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "hacktiv8-7",
-    "password": "",
-    "database": "express_url_shortener",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "use_env_variable": "DATABASE_URL",
+    "base_url": "https://agile-citadel-39598.herokuapp.com/"
   }
 }
