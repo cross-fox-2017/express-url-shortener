@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+      table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+      }
+
+      td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+      }
+
+      tr:nth-child(even) {
+          background-color: #dddddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>No</td>
+          <td>Url Link</td>
+          <td>Shortener link</td>
+          <td>Clicked</td>
+          <td>Create At</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i=0;i < link.length; i++) {%>
+        <tr>
+            <td><%= link[i].id %></td>
+            <td><%= link[i].url_link %></td>
+            <td><a href="/<%=link[i].short_url%>" target="_blank"><%= config %><%= link[i].short_url %> </a></td>
+            <td><%= link[i].click_count %></td>
+            <td><%= link[i].createdAt %></td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+    <form action="/urls" method="post">
+      <div class="form-group">
+        Title:<br>
+        <input type="url" name="url_link" class="form-control" value="http://">
+      </div>
+      <input type="submit" value="Submit" class="btn btn-success">
+
+    </form>
+
+  </body>
+</html>
