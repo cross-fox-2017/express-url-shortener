@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "hacktiv8-6",
+    "password": "hacktiv8-6",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "database": "express-url-shortener",
+    "logging": false
+  }
+}
