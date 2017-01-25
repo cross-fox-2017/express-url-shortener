@@ -23,7 +23,7 @@ router.get('/:bebasaja', function(req, res, next) {
       shorturls: req.params.bebasaja
     }
   }).then(function(tes){
-    tes.click_count+=1
+    tes.click_count++;
     tes.update({click_count: tes.click_count})
     res.redirect(tes.url)
   })
