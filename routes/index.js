@@ -19,12 +19,12 @@ router.get('/table/:short_url', function(req, res, next) {
   })
 });
 
-let i = 1
+
 router.get('/:short_url', function(req, res, next) {
-  i++
   models.Links.find({where:{short_url: req.params.short_url}}).then(function (find) {
+    let x = find.count + 1
     find.update({
-      count: i
+      count: x
     }).then(function(){
       res.redirect(`http://${find.link}`)
     })
