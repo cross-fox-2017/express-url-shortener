@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 let models = require('../models')
+var env = process.env.NODE_ENV || 'development';
+var config = require(__dirname + '/../config/config.json')[env];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -26,8 +28,11 @@ router.get('/:short_url', function(req, res, next) {
     let x = find.count + 1
     find.update({
       count: x
-    }).then(function(){
-      res.redirect(`http://${find.link}`)
+    }).then(function(data){
+      res.writeHead(301, {
+        Location: "http" + (req.socket.encrypted ? "s" : "") + "://" + data.link
+      })
+      res.end();
     })
   })
 });
