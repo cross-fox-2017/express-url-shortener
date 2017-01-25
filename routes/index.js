@@ -1,6 +1,8 @@
 let express = require('express');
 let router = express.Router();
 let models = require('../models')
+var env       = process.env.NODE_ENV || 'development';
+var config    = require(__dirname + '/../config/config.json')[env];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -17,23 +19,29 @@ router.get('/', function(req, res, next) {
 //   }
 // }
 
-router.post('/url', function(req, res, next) {
+router.post('/create/url', function(req, res, next) {
   models.Urls.create({url: req.body.url}).then(function (data) {
     res.redirect('/');
   })
 });
 
-let i = 0
-router.get('/short/:url', (req, res, next) => {
-  models.Urls.findOne({where: {url: req.params.url }}).then(function (find) {
+
+router.get('/:url', (req, res, next) => {
+  let url = `${config.base_url}${req.params.url}`
+  models.Urls.findOne({where: {shortened: url }}).then(function (find) {
     find.update({
-      clicked: i++
+      clicked: find.clicked+1
+    }).then(function (data) {
+      res.writeHead(301, {
+        Location: "http" + (req.socket.encrypted ? "s" : "") + "://" + 
+        data.url
+      });
+      res.end();
     })
-    res.redirect(`http://${req.params.url}`)
   })
 })
 
-router.get('/add', function (req, res, next) {
+router.get('/create/add', function (req, res, next) {
   res.render('pages/add');
 })
 

@@ -16,14 +16,14 @@
             <% for(let i = 0; i < url_data.length; i++){ %>
             <tr>
               <td><%= url_data[i].url %></td>
-              <td><a href="/short/<%= url_data[i].url %>">http://localhost:3000/<%= url_data[i].shortened %></a></td>
+              <td><a href="<%= url_data[i].shortened %>"><%= url_data[i].shortened %></a></td>
               <td><%= url_data[i].clicked %></td>
               <td><a href="/delete/<%= url_data[i].url %>" class="btn btn-danger">Delete</a></td>
             </tr>
             <% } %>
           </tbody>
         </table>
-        <a href="/add" class="btn btn-primary">Add</a>
+        <a href="/create/add" class="btn btn-primary">Add</a>
       </div>
     </div>
 <% include ../partials/footer %>

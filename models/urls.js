@@ -8,6 +8,9 @@ function random() {
   return text;
 }
 
+var env       = process.env.NODE_ENV || 'development';
+var config    = require(__dirname + '/../config/config.json')[env];
+
 module.exports = function(sequelize, DataTypes) {
   var Urls = sequelize.define('Urls', {
     url: DataTypes.STRING,
@@ -17,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
     hooks: {
       beforeCreate: function (url, options) {
         url.clicked = 0,
-        url.shortened = random()
+        url.shortened = `${config.base_url}${random()}`
       }
     },
     classMethods: {
