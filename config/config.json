@@ -5,5 +5,9 @@
     "database": "url_shortener_db",
     "host": "127.0.0.1",
     "dialect": "postgres"
+  },
+  "production":{
+    "use_env_variable": "DATABASE_URL",
+    "base_url": "http://salty-ravine-59114.herokuapp.com"
   }
 }
