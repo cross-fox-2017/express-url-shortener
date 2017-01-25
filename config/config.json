@@ -14,10 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "use_env_variable":"postgres://kcdfpepzoxbyau:777154b0d836f1a79424ff8e6100f5ec5b552bb348fd3eab17d3f7d8b9063617@ec2-107-20-193-74.compute-1.amazonaws.com:5432/dbsak1aioeoqg6",
+    "webhost":"https://young-plains-63613.herokuapp.com/"
   }
 }
