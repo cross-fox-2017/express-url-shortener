@@ -17,7 +17,7 @@ router.post('/add', function(req, res, next) {
  })
 });
 
-router.get('/newtab/:bebasaja', function(req, res, next) {
+router.get('/:bebasaja', function(req, res, next) {
   models.Url.findOne({
     where: {
       shorturls: req.params.bebasaja
