@@ -24,7 +24,7 @@
         <tr>
           <td><%= data.id %></td>
           <td><%= data.url %></td>
-          <td><%= data.shorturl %></td>
+          <td><a href="/<%= data.shorturl %>">localhost:3000/<%= data.shorturl %></a></td>
           <td><%= data.clickcount %></td>
         </tr>
       <% }) %>
