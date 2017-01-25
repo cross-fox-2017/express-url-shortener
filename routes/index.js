@@ -29,7 +29,7 @@ router.get('/short/:url', (req, res, next) => {
     find.update({
       clicked: i++
     })
-    res.redirect(`http://www.${req.params.url}`)
+    res.redirect(`http://${req.params.url}`)
   })
 })
 
