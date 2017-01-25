@@ -4,7 +4,8 @@
         "password": "hacktiv8-10",
         "storage": "db/express_url_shortener.db",
         "host": "127.0.0.1",
-        "dialect": "postgres"
+        "dialect": "postgres",
+        "base_url": "localhost:1945/"
     },
     "production": {
         "use_env_variable": "DATABASE_URL",
