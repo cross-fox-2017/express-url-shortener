@@ -1,3 +1,3 @@
 echo "HELLO"
-node ./bin/www &
+node ./bin/www
 echo "FINISH"
