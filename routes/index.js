@@ -11,14 +11,6 @@ router.get('/', function(req, res, next) {
   })
 });
 
-// let tam = req.body.url.split(".")
-// let shortened = ""
-// for (let i = 0; i < tam.length; i++) {
-//   if (tam[i].toLowerCase() !== "www" && tam[i].toLowerCase() !== "com") {
-//     shortened = tam[i]
-//   }
-// }
-
 router.post('/create/url', function(req, res, next) {
   models.Urls.create({url: req.body.url}).then(function (data) {
     res.redirect('/');
@@ -33,7 +25,7 @@ router.get('/:url', (req, res, next) => {
       clicked: find.clicked+1
     }).then(function (data) {
       res.writeHead(301, {
-        Location: "http" + (req.socket.encrypted ? "s" : "") + "://" + 
+        Location: "http" + (req.socket.encrypted ? "s" : "") + "://" +
         data.url
       });
       res.end();

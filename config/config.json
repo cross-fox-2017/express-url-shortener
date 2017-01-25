@@ -5,7 +5,7 @@
     "host": "127.0.0.1",
     "dialect": "postgres",
     "database": "express-url-shortener",
-    "logging": true,
+    "logging": false,
     "base_url": "http://localhost:3000/"
   },
   "production": {

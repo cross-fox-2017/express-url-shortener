@@ -16,7 +16,7 @@
             <% for(let i = 0; i < url_data.length; i++){ %>
             <tr>
               <td><%= url_data[i].url %></td>
-              <td><a href="<%= url_data[i].shortened %>"><%= url_data[i].shortened %></a></td>
+              <td><a href="<%= url_data[i].shortened %>" target="_blank"><%= url_data[i].shortened %></a></td>
               <td><%= url_data[i].clicked %></td>
               <td><a href="/delete/<%= url_data[i].url %>" class="btn btn-danger">Delete</a></td>
             </tr>
