@@ -1,2 +1,1 @@
-https://agile-citadel-39598.herokuapp.com/
 https://nameless-journey-74850.herokuapp.com
