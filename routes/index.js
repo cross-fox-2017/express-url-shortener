@@ -21,8 +21,8 @@ router.get('/add', function (req, res, next) {
   res.render('pages/add');
 })
 
-router.get('/:shortened', (req, res, next) => {
-  models.Urls.findOne({where: {shortened: req.params.shortened }}).then(function (find) {
+router.get('/:short_url', (req, res, next) => {
+  models.Urls.findOne({where: {shortened: req.params.short_url }}).then(function (find) {
     find.update({
       clicked: find.clicked + 1
     }).then(function (data) {

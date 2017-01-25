@@ -1,6 +1,4 @@
 'use strict';
-var env       = process.env.NODE_ENV || 'development';
-var config    = require(__dirname + '/../config/config.json')[env];
 
 function random() {
   var text = "";
@@ -20,7 +18,6 @@ module.exports = function(sequelize, DataTypes) {
     hooks: {
       beforeCreate: function (url, options) {
         url.clicked = 0,
-        url.shortened = `${config.base_url}${random()}`
         url.shortened = random()
       }
     },
