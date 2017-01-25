@@ -18,7 +18,7 @@ router.post('/create', function(req, res) {
 });
 
 
-router.get('/url/:shorturl',function(req,res){
+router.get('/:shorturl',function(req,res){
   url.findOne({
   where: {
     shorturl: req.params.shorturl
