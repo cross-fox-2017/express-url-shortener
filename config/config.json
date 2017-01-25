@@ -1,0 +1,16 @@
+{
+    "development": {
+        "username": "hacktiv8-10",
+        "password": "hacktiv8-10",
+        "storage": "db/express_url_shortener.db",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
+    "production": {
+        "username": "hacktiv8-10",
+        "password": "hacktiv8-10",
+        "storage": "db/express_url_shortener.db",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    }
+}
