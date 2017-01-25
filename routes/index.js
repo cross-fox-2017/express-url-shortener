@@ -1,0 +1,32 @@
+var express = require('express');
+var router = express.Router();
+const models = require('../models');
+var env       = process.env.NODE_ENV || 'development';
+var config    = require(__dirname + '/../config/config.json')[env];
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  models.Url.findAll().then (function(asal){
+    res.render('halamanurl', {isidata:asal,terserahapa:config.base_url});
+  })
+});
+
+router.post('/add', function(req, res, next) {
+  models.Url.create({url: req.body.masukanurl}).then(function(bebas){
+  res.redirect('/')
+ })
+});
+
+router.get('/:bebasaja', function(req, res, next) {
+  models.Url.findOne({
+    where: {
+      shorturls: req.params.bebasaja
+    }
+  }).then(function(tes){
+    tes.click_count++;
+    tes.update({click_count: tes.click_count})
+    res.redirect(tes.url)
+  })
+});
+
+module.exports = router;

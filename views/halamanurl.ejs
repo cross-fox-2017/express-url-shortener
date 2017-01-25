@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class="container">
+                <table class="table table-bordered">
+                  <tr>
+                    <th>ID</th>
+                    <th>URLs</th>
+                    <th>Short URLs</th>
+                    <th>Count Click</th>
+                  </tr>
+                  <% for(let i=0; i<isidata.length; i++){ %>
+                    <tr>
+                      <td><%= isidata[i].id %></td>
+                      <td><%= isidata[i].url %></td>
+                      <td> <a href = "/<%= isidata[i].shorturls %>" target="_blank"><%=terserahapa%><%= isidata[i].shorturls %> </a> </td>
+                      <td><%= isidata[i].click_count %></td>
+                    </tr>
+                  <% } %>
+              </table>
+            <form method="post" action="/add">
+              URL:<br>
+               <div class="col-md-4">
+                <input type="url" class="form-control" name="masukanurl" >
+               </div>
+              <input class="btn btn-primary" type="submit" value="Submit">
+            </form>
+
+<div>
+  </body>
+</html>
