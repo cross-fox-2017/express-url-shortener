@@ -1,0 +1,17 @@
+{
+  "development": {
+    "username": "hacktiv8-11",
+    "password": "hacktiv8-11",
+    "database": "short_url",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "base_url": "http://localhost:3000/"
+  },
+  "production": {
+    "username": "hacktiv8-11",
+    "password": "hacktiv8-11",
+    "database": "short_url",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
