@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
 const models = require('../models');
+var env       = process.env.NODE_ENV || 'development';
+var config    = require(__dirname + '/../config/config.json')[env];
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   models.Url.findAll().then (function(asal){
-    res.render('halamanurl', {isidata:asal });
+    res.render('halamanurl', {isidata:asal,terserahapa:config.base_url});
   })
 });
 
