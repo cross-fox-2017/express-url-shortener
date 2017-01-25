@@ -25,14 +25,13 @@ router.get('/table/:short_url', function(req, res, next) {
 router.get('/:short_url', function(req, res, next) {
   let url = `${config.base_url}${req.params.short_url}`
   models.Links.find({where:{short_url: url}}).then(function (find) {
-    let x = find.count + 1
-    find.update({
-      count: x
-    }).then(function(data){
-      res.writeHead(301, {
-        Location: "http" + (req.socket.encrypted ? "s" : "") + "://" + data.link
-      })
-      res.end();
+    let addCount = find.count + 1
+    find.update({count: addCount}).then(function(data){
+      // res.writeHead(301, {
+      //   Location: "http" + (req.socket.encrypted ? "s" : "") + "://" + data.link
+      // })
+      // res.end();
+      res.redirect("http://" + data.link)
     })
   })
 });
