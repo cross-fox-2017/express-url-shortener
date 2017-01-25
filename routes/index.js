@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models')
+var env       = process.env.NODE_ENV || 'development';
+var config    = require(__dirname + '/../config/config.json')[env];
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log(config.base_url)
   db.Url.findAll().then(function(urls){
-    res.render('pages/table', { title: 'URLS',data: urls });
+    res.render('pages/table', { title: 'URLS',data: urls,depan: config.base_url });
   })
 
 });

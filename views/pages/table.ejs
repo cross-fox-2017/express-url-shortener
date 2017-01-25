@@ -10,7 +10,7 @@
   <% for(var i=0;i<data.length;i++){%>
   <tr>
     <td><%=data[i].url%></td>
-    <td><a href="/tes/<%=data[i].shorten_url %>" target="_blank" >https://murmuring-river-95364.herokuapp.com/<%=data[i].shorten_url%></a></td>
+    <td><a href="/tes/<%=data[i].shorten_url %>" target="_blank" ><%=depan%><%=data[i].shorten_url%></a></td>
     <td><%=data[i].click_count%></td>
   </tr>
   <% }%>
