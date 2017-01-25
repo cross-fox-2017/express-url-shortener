@@ -25,7 +25,7 @@
         <tr>
           <td><%= data.id %></td>
           <td><%= data.url %></td>
-          <td><a href="/<%= data.shorturl %>">https://salty-ravine-59114.herokuapp.com/<%= data.shorturl %></a></td>
+          <td><a href="/<%= data.shorturl %>"><%= baseurl %>/<%= data.shorturl %></a></td>
           <td><%= data.clickcount %></td>
         </tr>
       <% }) %>

@@ -2,11 +2,15 @@ var express = require('express');
 var router = express.Router();
 var models = require('../models');
 var url = models.Url
+var env = process.env.NODE_ENV || 'development';
+var config = require(__dirname + '/../config/config.json')[env];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  let baseurl = `${config.base_url}`
+  console.log(config);
   url.findAll({order: [['id', 'ASC']]}).then(function(data){
-    res.render('index', { title: 'Express URL Shortener', data: data });
+    res.render('index', { title: 'Express URL Shortener', data: data, baseurl: baseurl });
   })
 });
 
