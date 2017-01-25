@@ -1,0 +1,21 @@
+{
+  "development": {
+    "username": "raditya",
+    "password": "hakunamatata",
+    "database": "express_shortener_database",
+    "host": "localhost",
+    "dialect": "postgres",
+    "base_url": "localhost:3000/"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "use_env_variable":"DATABASE_URL",
+    "base_url" : "https://secret-escarpment-57210.herokuapp.com/"
+  }
+}
