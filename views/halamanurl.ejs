@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <table style="width:100%" border="solid">
+      <tr>
+        <th>ID</th>
+        <th>URLs</th>
+        <th>Short URLs</th>
+        <th>Count Click</th>
+      </tr>
+      <% for(let i=0; i<isidata.length; i++){ %>
+        <tr>
+          <td><%= isidata[i].id %></td>
+          <td><%= isidata[i].url %></td>
+          <td> <a href = "/newtab/<%= isidata[i].shorturls %>" target="_blank">yom.swn/<%= isidata[i].shorturls %> </a> </td>
+          <td><%= isidata[i].click_count %></td>
+        </tr>
+      <% } %>
+  </table>
+<form method="post" action="/add">
+  URL:<br>
+  <input type="text" name="masukanurl" >
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+  </body>
+</html>
