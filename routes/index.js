@@ -34,7 +34,7 @@ router.get('/:short_url', function(req, res, next) {
         project.updateAttributes({
             count : project.count + 1
         })
-      res.redirect("https://"+project.link);
+      res.redirect(project.link);
 })
 
 });
