@@ -6,7 +6,7 @@ var url = models.Url
 /* GET home page. */
 router.get('/', function(req, res, next) {
   url.findAll({order: [['id', 'ASC']]}).then(function(data){
-    res.render('index', { title: 'Express', data: data });
+    res.render('index', { title: 'Express URL Shortener', data: data });
   })
 });
 
