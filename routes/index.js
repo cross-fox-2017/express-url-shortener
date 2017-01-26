@@ -9,6 +9,7 @@ var url = models.Url;
 router.get('/', function(req, res, next) {
   url.findAll().then(function(url){
     res.render('index', { title: 'URL Shortener', data_url: url, urlDinamis: config.base_url });
+    console.log(config);
   })
 });
 
