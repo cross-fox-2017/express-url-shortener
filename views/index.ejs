@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>URL</th>
+        <th>Short URL</th>
+        <th>Click Count</th>
+      </tr>
+      <% for(var i = 0; i < data_url.length; i++){ %>
+      <tr>
+        <td><%= data_url[i].id %></td>
+        <td><%= data_url[i].url %></td>
+        <td><a href="/<%= data_url[i].short_url %>" target="_blank"><%= urlDinamis %><%= data_url[i].short_url %></a></td>
+        <td><%= data_url[i].click_count %></td>
+      <tr>
+      <% } %>
+    </table>
+      <br><br>
+      <form action="/short_url" method="post">
+        URL   :
+        <input type="text" name="url"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+  </body>
+</html>

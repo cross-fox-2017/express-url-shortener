@@ -1,0 +1,14 @@
+{
+  "development": {
+    "username": "mrei91",
+    "password": "mrei91",
+    "database": "shortURL",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "base_url":"localhost:3000/"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "base_url":"https://afternoon-everglades-81967.herokuapp.com/"
+  }
+}
