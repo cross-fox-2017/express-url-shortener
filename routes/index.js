@@ -31,6 +31,30 @@ router.get('/:short_url', (req, res, next) => {
   })
 })
 
+/*
+router.get('/:short_url', function(req, res, next) {
+  let url = `${config.base_url}${req.params.short_url}`
+  models.Urls.findOne({where: {shortened: url }}).then(function (find) {
+    find.update({
+      clicked: find.clicked + 1
+    }).then(function (data) {
+    // res.writeHead(301, {
+    //   Location: "http" + (req.socket.encrypted ? "s" : "") + "://" + data.link
+    // })
+    // res.end();
+      res.redirect(`http://${data.url}`)
+    })
+  })
+});
+
+<tr>
+  <td><%= url_data[i].url %></td>
+  <td><a href="<%= url_data[i].shortened %>" target="_blank"><%= url_data[i].shortened %></a></td>
+  <td><%= url_data[i].clicked %></td>
+  <td><a href="/delete/<%= url_data[i].url %>" class="btn btn-danger">Delete</a></td>
+</tr>
+*/
+
 router.get('/delete/:url', function (req, res, next){
   models.Urls.destroy({
     where: {
