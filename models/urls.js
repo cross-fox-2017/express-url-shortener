@@ -21,6 +21,14 @@ module.exports = function(sequelize, DataTypes) {
         url.shortened = random()
       }
     },
+    /*
+    hooks: {
+      beforeCreate: function(url, options) {
+        url.clicked = 0,
+        url.shortened = `${config.base_url}${random()}`
+      }
+    },
+    */
     classMethods: {
       associate: function(models) {
         // associations can be defined here
